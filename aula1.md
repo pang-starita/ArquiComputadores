@@ -51,7 +51,7 @@
 
 - Arquitetura x Organização de Computadores
 - Segundo Stallings:
-  + Arquitetura mostra a estrutura lógico/funcional dos componentes de um computador
+  + Arquitetura mostra a estrutura lógico/funcional dos componentes de um computador - se refere aos atributos do sistema que são visíveis ao programador
   + Organização mostra a estrutura física dos componentes de um computador
 - Organização dos Computadores $\rightarrow$ Engenharia de Computação
 
@@ -61,6 +61,8 @@
 
 * O que é um programa?
   - um punhado de instruções para resolver um *problema*
+
+![Visão top-down do computador](visao_topdown.png)
 
 ## Componentes de um computador
 
@@ -78,9 +80,11 @@
 
 * **Entrada/Saída**: componente que captura e mostra dados para os meios externos ao computador ou que faz comunicação com outros meios e computadores
 
+* **Barramento**: componente que faz a comunicação de dados/instruções e endereços entre os outros componentes
+
 ## Exercícios
 
-1. Explique com as suas palvras no que consiste um sistema computacional.
+1. Explique com as suas palavras no que consiste um sistema computacional.
 2. Qual a diferença entre um computador analógico e um computador digital?
 3. Os computadores atuais são analógicos ou digitais?
 4. O que John von Neumann significou para a computação?
@@ -88,3 +92,30 @@
 6. No que consiste um transistor e qual a sua contribuição para a evolução dos computadores?
 7. Qual a função dos circuitos integrados?
 8. Em qual das escalas de integração se classificam os microprocessadores?
+
+## Evolução dos Computadores
+
+* Ideias de computação/computador são muito antigas
+* O computador moderno foi formalizado por Charles Babbage no século XIX, máquina analítica de Babbage - máquina papel, a tecnologia da época não conseguia implementar. Primeiros programas para a máquina analítica escritos por Ada, Condessa de Lovelace.
+
+### Primeira geração
+
+* Primeiro computador programável de Konrad Zuse. ENIAC - primeiro computador moderno americano, construído com válvulas e relés pelos engenheiros Mauchley e Eckert. ENIAC serviu de base para von Neumann construir o modelo de von Neumann para os computadores
+
+* Programação era feita com a configuração de chaves, ...
+
+## Segunda geração
+
+* Uso de transistores, surgimento de dispositivos de entrada e saída mais ergonométricos (amistosos para seres humanos), fitas papel e magnética, ...
+
+* Surgimento das primeiras linguagens de programação, compiladores, ...
+
+## Terceira geração
+
+* Uso de circuitos integrados: SSI, MSI, LSI, VLSI
+* Consoles (monitor + teclado), impressoras matriciais, ...
+* Banco de dados, SO multiusuário, multitarefa, ...
+
+## Quarta geração
+
+???
