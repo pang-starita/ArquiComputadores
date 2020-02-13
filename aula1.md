@@ -46,3 +46,45 @@
 3. HENNESSY, J.L.; .PATTERSON, D., Arquitetura de Computadores: Uma abordagem quantitativa, 5ª ed., Elsevier, 2014.
 
 4. FÁVERO, E.M.B. Organização e Arquitetura de Computadores, Pato Branco: Universidade Tecn. Fed. do Paraná, 2011, http://redeetec.mec.gov.br/images/stories/pdf/eixo_infor_comun/tec_inf/081112_org_arq_comp.pdf, acessado em 11/02/2020.
+
+## Introdução
+
+- Arquitetura x Organização de Computadores
+- Segundo Stallings:
+  + Arquitetura mostra a estrutura lógico/funcional dos componentes de um computador
+  + Organização mostra a estrutura física dos componentes de um computador
+- Organização dos Computadores $\rightarrow$ Engenharia de Computação
+
+## O que é um computador?
+
+* É uma máquina que executa um programa armazenado. ???
+
+* O que é um programa?
+  - um punhado de instruções para resolver um *problema*
+
+## Componentes de um computador
+
+![Estrutura de um computador monoprocessador com um único barramento.](monoproc.png)
+
+## Componentes
+
+* **Processador**: CPU - unidade central de processamento (UCP) - componente responsável pela execução das instruções
+
+* **Memória**: componente que armazena dados e instruções
+
+* **Entrada**: componente que captura os dados externos ao computadores
+
+* **Saída**: componente que *mostra* os dados para os meios externos ao computador
+
+* **Entrada/Saída**: componente que captura e mostra dados para os meios externos ao computador ou que faz comunicação com outros meios e computadores
+
+## Exercícios
+
+1. Explique com as suas palvras no que consiste um sistema computacional.
+2. Qual a diferença entre um computador analógico e um computador digital?
+3. Os computadores atuais são analógicos ou digitais?
+4. O que John von Neumann significou para a computação?
+5. Qual a composição do modelo de von Neumann e qual a relação desse modelo com os computadores atuais?
+6. No que consiste um transistor e qual a sua contribuição para a evolução dos computadores?
+7. Qual a função dos circuitos integrados?
+8. Em qual das escalas de integração se classificam os microprocessadores?
