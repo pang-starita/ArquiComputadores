@@ -98,17 +98,28 @@
 * Ideias de computação/computador são muito antigas
 * O computador moderno foi formalizado por Charles Babbage no século XIX, máquina analítica de Babbage - máquina papel, a tecnologia da época não conseguia implementar. Primeiros programas para a máquina analítica escritos por Ada, Condessa de Lovelace.
 
-### Primeira geração
+## Primeira geração
 
 * Primeiro computador programável de Konrad Zuse. ENIAC - primeiro computador moderno americano, construído com válvulas e relés pelos engenheiros Mauchley e Eckert. ENIAC serviu de base para von Neumann construir o modelo de von Neumann para os computadores
 
 * Programação era feita com a configuração de chaves, ...
 
+![Primeira Geração de Computadores](g1.png)
+
 ## Segunda geração
 
 * Uso de transistores, surgimento de dispositivos de entrada e saída mais ergonométricos (amistosos para seres humanos), fitas papel e magnética, ...
+![Transistor](transistor.png)
 
 * Surgimento das primeiras linguagens de programação, compiladores, ...
+
+
+##
+
+![IBM 1401](ibm1401.png)
+
+Fonte: UEA
+
 
 ## Terceira geração
 
@@ -116,6 +127,12 @@
 * Consoles (monitor + teclado), impressoras matriciais, ...
 * Banco de dados, SO multiusuário, multitarefa, ...
 
+![Circuitos Integrados](cis.png)
+
 ## Quarta geração
 
-???
+* Internet
+* Big Data
+* Deep Learning
+* Nuvem
+* ???
