@@ -13,9 +13,30 @@
 
 ## Sinais analógicos
 
-![Sinais: A - Constante; B - Senoidal; C - Quadrada; D - Decaimento exponencial; E - Degrau; F - Triangular;](sinais.jpg)
+![Sinais: A - Constante; B - Senoidal; C - Quadrada; D - Decaimento exponencial; E - Degrau; F - Triangular](sinais.jpg)
 
-## Tamanho
+## Sinal Digital
+
+* Muda em instantes bem definidos e só tem uma quantidade finita de valores de intensidade
+
+![Sinal digital](sinal_digital.png)
+
+Fonte: https://www.wikipedia.org
+
+## Sinais Digitais \(comunicação\)
+
+![Sinais Digitais](sinais_digitais.png)
+
+Fonte: https://learn.sparkfun.com
+
+## Computador Digital
+
+* Os dados recebem uma *representação digital* $\rightarrow$ *código*
+* Os dados podem se mover entre os diferentes componentes do computador, através do sistema de comunicação \(barramentos\)
+* Dados numéricos podem sofrer *operações*/transformações
+* Dados podem ser convertidos de uma representação para uma outra
+
+## Tamanho do computador
 
 * Mainframes \(Computadores de Grande Porte\)
 * Supercomputadores
@@ -154,3 +175,35 @@ $C_O = C_I' \cdot I_1 \cdot I_2 + C_I \cdot I_1 \cdot I_2' + C_I \cdot I_1' \cdo
 | 1     | 0  | 1  |    |       |
 | 1     | 1  | 0  |    |       |
 | 1     | 1  | 1  |    |       |
+
+<!--
+## Tabela Verdade do FA
+
+| $C_I$ | I1 | I2 | S  | $C_O$ |
+|-------|----|----|----|-------|
+| 0     | 0  | 0  | 0  |  0    |
+| 0     | 0  | 1  | 1  |  0    |
+| 0     | 1  | 0  | 1  |  0    |
+| 0     | 1  | 1  | 0  |  1    |
+| 1     | 0  | 0  | 1  |  0    |
+| 1     | 0  | 1  | 0  |  1    |
+| 1     | 1  | 0  | 0  |  1    |
+| 1     | 1  | 1  | 1  |  1    |
+
+-->
+
+## Circuito do somador completo
+
+![Somador completo](full_adder.png)
+
+## Somador de 4 Bits
+
+![Somador de 4 bits usando FAs](somador_4bits.gif)
+
+## Outras portas lógicas básicas
+
+* NOR: $S = (I_1 + I_2)' = I_1' \cdot I_2'$
+* NAND: $S = (I_1 \cdot I_2)' = I_1' + I_2'$
+* XOR: $S = I_1' \cdot I_2 + I_1 \cdot I_2'$
+* Not-XOR: $S = I_1' \cdot I_2' + I_1 \cdot I_2$
+* Portas AND, OR, NAND e NOR com mais entradas
