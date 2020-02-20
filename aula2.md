@@ -110,4 +110,30 @@ $O = I_1' . I_2' + I_1 . I_2$
 
 ## Somador \(*half adder*\)
 
+### Tabela Verdade para Somar 2 Bits
+
+| I1 | I2 |  S |
+|----|----|----|
+| 0  | 0  | 0  |
+| 0  | 1  | 1  |
+| 1  | 0  | 1  |
+| 1  | 1  | ?  |
+
+## Meio Somador
+
+### Tabela Verdade para Somar 2 Bits
+
+| I1 | I2 | S  | $C_O$ |
+|----|----|----|-------|
+| 0  | 0  | 0  | 0     |
+| 0  | 1  | 1  | 0     |
+| 1  | 0  | 1  | 0     |
+| 1  | 1  | 0  | 1     |
+
+$S = I_1' . I_2 + I_1 . I_2'$
+
+$C_O = I_1 . I_2$
+
+![Meio Somador](half_adder.png)
+
 ## Somador completo \(*full adder*\)
