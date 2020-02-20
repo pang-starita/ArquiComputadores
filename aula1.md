@@ -100,19 +100,27 @@
 
 ## Primeira geração
 
-* Primeiro computador programável de Konrad Zuse. ENIAC - primeiro computador moderno americano, construído com válvulas e relés pelos engenheiros Mauchley e Eckert. ENIAC serviu de base para von Neumann construir o modelo de von Neumann para os computadores
+* Primeiro computador programável de Konrad Zuse. ENIAC (1946) - primeiro computador moderno americano, construído com válvulas e relés pelos engenheiros Mauchley e Eckert. ENIAC serviu de base para von Neumann construir o modelo de von Neumann para os computadores
 
 * Programação era feita com a configuração de chaves, ...
 
-![Primeira Geração de Computadores](g1.png)
+##
+
+![Programação do ENIAC](ENIAC.png)
+
+##
+
+![Válvula - Primeira Geração de Computadores](g1.png)
 
 ## Segunda geração
 
 * Uso de transistores, surgimento de dispositivos de entrada e saída mais ergonométricos (amistosos para seres humanos), fitas papel e magnética, ...
-![Transistor](transistor.png)
 
 * Surgimento das primeiras linguagens de programação, compiladores, ...
 
+##
+
+![Transistor](transistor.png)
 
 ##
 
@@ -131,8 +139,20 @@ Fonte: UEA
 
 ## Quarta geração
 
+* ULSI, multicore
 * Internet
-* Big Data
-* Deep Learning
-* Nuvem
-* ???
+* *Big Data*
+* *Deep Learning*
+* Nuvem \(Cloud Computing\) - PaaS \(Platform as a Service\)
+
+##
+
+![Microprocessador com múltiplos núcleos](uproc_AMD.png)
+
+## Questões de fixação
+
+1. Faça uma tabela indicando as características de Hardware \(HW\) e Software \(SW\) que distinguem as diferentes gerações de computadores.
+2. Na construção de um computador digital, o principal elemento básico de HW é o comutador \(ou a chave controlada\). Nas diferentes gerações, o comutador passou de relés eletromecânicos para válvulas eletrônicas, para transistores e, finalmente, para circuitos integrados. Pesquise na Internet características do tipo, velocidade de comutação, gasto de energia para comutação, para manter um estado, custo e tamanho.
+3. Pesquise para justificar ou negar a afirmação:
+
+> A medida que o computador foi ficando mais complexo e poderoso, o HW foi diminuindo de preço e o SW foi aumentado de valor.
