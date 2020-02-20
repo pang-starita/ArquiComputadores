@@ -76,7 +76,7 @@ $O = I'$
 | 1  | 0  | 0   |
 | 1  | 1  | 1   |
 
-$O = I_1 . I_2$
+$O = I_1 \cdot I_2$
 
 ## Porta OU \(OR\)
 
@@ -99,7 +99,7 @@ $O = I_1 + I_2$
 
 ### Solução
 
-$O = I_1' . I_2' + I_1 . I_2$
+$O = I_1' \cdot I_2' + I_1 \cdot I_2$
 
 ![Circuito da igualdade](equal.png)
 
@@ -130,10 +130,27 @@ $O = I_1' . I_2' + I_1 . I_2$
 | 1  | 0  | 1  | 0     |
 | 1  | 1  | 0  | 1     |
 
-$S = I_1' . I_2 + I_1 . I_2'$
+$S = I_1' \cdot I_2 + I_1 \cdot I_2' = I_1 \oplus I_2$
 
-$C_O = I_1 . I_2$
+$C_O = I_1 \cdot I_2$
 
 ![Meio Somador](half_adder.png)
 
 ## Somador completo \(*full adder*\)
+
+$S = C_I' \cdot I_1' \cdot I_2 + C_I' \cdot I_1 \cdot I_2' + C_I \cdot I_1' \cdot I_2' + C_I \cdot I_1 \cdot I_2 = C_I \oplus I_1 \oplus I_2$
+
+$C_O = C_I' \cdot I_1 \cdot I_2 + C_I \cdot I_1 \cdot I_2' + C_I \cdot I_1' \cdot I_2 + C_I \cdot I_1 \cdot I_2$
+
+### Tabela Verdade do FA
+
+| $C_I$ | I1 | I2 | S  | $C_O$ |
+|-------|----|----|----|-------|
+| 0     | 0  | 0  |    |       |
+| 0     | 0  | 1  |    |       |
+| 0     | 1  | 0  |    |       |
+| 0     | 1  | 1  |    |       |
+| 1     | 0  | 0  |    |       |
+| 1     | 0  | 1  |    |       |
+| 1     | 1  | 0  |    |       |
+| 1     | 1  | 1  |    |       |
