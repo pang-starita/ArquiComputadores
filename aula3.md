@@ -1,23 +1,22 @@
-## Sistema de Numeração
+## Representação Binária
 
 ### Representação de Dados
 
 * Diferença entre *informação* e *dados*:
   - informação tem contexto, significado
   - dados são mais abstratos: números, textos, valores
-* Precisamos representar os dados em bits do computador digital.
+* Precisamos representar os dados em bits no computador digital.
+* Num computador digital, os sinais binários correspondem a *bits* que são armazenados em elementos de memória, eles são aplicados às entradas de circuitos digitais e são as saídas desses circuitos.
 
 ##
 
-* Num computador digital, os sinais binários correspondem a *bits* que são armazenados em elementos de memória, eles são aplicados às entradas de circuitos digitais e são as saídas desses circuitos.
-
-* Um bit é um sinal ou o estado de um elemento de memorização que pode ter um de 2 valores binários: `0` ou `1`.
+* Um bit é um sinal, ou o estado de um elemento de memorização, que pode ter um de 2 valores binários: `0` ou `1`.
 
 * Um *byte*, ou um octeto, é um arranjo de 8 bits.
 
 * As memórias, em geral, são arranjadas para serem acessadas byte-a-byte. Isto é, os *endereços* de memória permitem acessar um *byte* específico de uma memória.
 
-* Os dados \(e as instruções\) são compostos por *bytes*. Ao dizermos que um computador \(ou um processador\) trabalha com 32 ou 64 bits, isto quer dizer que o processador consegue realizar operações aritméticas com dados numéricos em 32 ou 64 bits. Ou, a palavra do processador é de 32 ou 64 bits. Na maioria das vezes, isto quer, também, dizer que o barramento de dados transmite palavras de 32 ou 64 bits.
+* Os dados \(e as instruções\) são compostos por *bytes*. Ao dizermos que um computador \(ou um processador\) trabalha com 32 ou 64 bits, isto quer dizer que o processador consegue realizar operações aritméticas com dados numéricos em 32 ou 64 bits. Ou, a *palavra* do processador é de 32 ou 64 bits. Na maioria das vezes, isto quer, também, dizer que o barramento de dados transmite palavras de 32 ou 64 bits.
 
 ## Representação de texto
 
@@ -30,6 +29,7 @@
 * Precisamos de códigos binários únicos para cada um destes caracteres:
   - ASCII - conjunto de caracteres usado na telegrafia americana, serviu de base para uma codificação de 7 bits. Além dos caracteres textuais, existem caracteres de *controle* que indicam: início de transmissão, fim de transmissão, fim de linha, sineta, DEL, ...
   - EBCEDIC - codificação usada pela IBM
+  - UTF-8
 
 ## ASCII
 
@@ -73,7 +73,6 @@ Fonte: Wikipedia
 | 14      | E    | 16    | 1110    |
 | 15      | F    | 17    | 1111    |
 
-
 ## Tabelas de codificações importantes(1)
 
 | Decimal | Hexa | Octal | Binário |
@@ -89,8 +88,10 @@ Fonte: Wikipedia
 
 * Observe a aproximação: $1024 \approx 1K$
 
-## Tabelas de codificações importantes(2)
+Para eliminar a dúvida de 1KB = 1000B ou 1024B, foi introduzida a noção de *Kilo binary Bytes* em 1998 pelo IEC. Agora, o correto é escrever: 1KiB, 1MiB, 1GiB, ... Mas, muitos ainda não conhecem este conceito.
 
+## Tabelas de codificações importantes(2)
+<!--
 | Nome | Aproximação |
 |------|-------------|
 | 1K (kilo)   | $10^3 \approx 2^{10}$ |
@@ -99,6 +100,9 @@ Fonte: Wikipedia
 | 1T (tera)   | $10^{12} \approx 2^{40}$ |
 | 1P (peta)   | $10^{15} \approx 2^{50}$ |
 | 1E (exa)   | $10^{18} \approx 2^{60}$ |
+-->
+
+![Tabela das potências de 1000 (Fonte: Wikipedia)](gibibyte.png)
 
 ## Conversão de números decimais para base 2
 
@@ -123,7 +127,7 @@ Fonte: Wikipedia
 | 1 | 1 |
 | 0 |   |
 
-$1969_{10} = 11110110001_2$
+$1969_{10} = 11110110001_2$ \(ano em que o homem pisou na lua\)
 
 ## Exercícios
 
@@ -138,4 +142,64 @@ $1969_{10} = 11110110001_2$
 
 ## Adição de números
 
+* 5 + 1 = 101 + 1 = 110 = $2^2 + 2^1$ = 4 + 2 = 6
 * 19 + 33 = 10011 + 100001 = 110100 = $2^5+2^4+2^2$ = 32 + 16 + 4 = 52
+* 31 + 2 = 11111 + 10 = 100001 = $2^5+2^0$ = 32 + 1 = 33
+
+$\frac{\begin{array}{lrrr} &1&0&1\\+& & &1 \end{array}}{\begin{array}{lrrr}  \quad&1&1&0 \end{array}}\quad$
+$\frac{\begin{array}{cccccc} &1&0&0&1&1\\1&0&0&0&0&1\end{array}}{\begin{array}{cccccc}1&1&0&1&0&0\end{array}}\quad$
+$\frac{\begin{array}{cccccc} &1&1&1&1&1\\ & & & &1&0\end{array}}{\begin{array}{cccccc}1&0&0&0&0&1\end{array}}$
+
+## Estouro \(*overflow*\)
+
+- Os processadores tem um número fixo de bits para realizar as operações aritméticas. Por exemplo, imagine um processador de 8 bits:
+  + Os números são sempre representados por 8 bits
+  + Ex.: 42 $\rightarrow$ 00011010 e não simplesmente 11010
+
+- Problema 1: o que acontece quando um número precisa de mais bits para ser representado?
+
+- Problema 2: e se a adição de 2 números resultar num número não representável por 8 bits?
+
+Exemplo: 100 + 200
+
+$\frac{\begin{array}{rrrrrrrrr}\;&0&1&1&0&0&1&0&0\\&1&1&0&0&1&0&0&0\end{array}}{\begin{array}{rrrrrrrrr}1&0&0&1&0&1&1&0&0\end{array}}$ **Estouro**
+
+## Subtração
+
+$\frac{\begin{array}{lrrr}&1&0&1\\-&&&1\end{array}}{\begin{array}{lrrr}\;\:&1&0&0\end{array}}\quad$
+$\frac{\begin{array}{lrrrrrr}&1&0&1&0&1&0\\-&&&&1&1&1\end{array}}{\begin{array}{lrrrrrr}\;\:&1&0&0&0&1&1\end{array}}\quad$
+$\frac{\begin{array}{lr}&0\\-&1\end{array}}{\begin{array}{lr}\;&-1\end{array}}$
+
+- Problema: não existe `-` num bit, como representar números negativos num computador digital?
+- Solução: bit de sinal $\leftarrow$ bit mais a esquerda, *MSB*
+
+$\frac{\begin{array}{rrrrrrrrr}\;&0&0&0&0&0&0&0&0\\-&0&0&0&0&0&0&0&1\end{array}}{\begin{array}{rrrrrrrrr}1&1&1&1&1&1&1&1&1\end{array}}$ **Estouro negativo?** \(*underflow*\)
+
+## Representação de inteiros negativos com complemento de 2
+
+* Negue (complemento de 1) cada bit da representação positiva com o númro de bits da palavra do processador
+* Adicione 1, este é o número negativo em complemento de 2 \(complemento de 1+1\)
+
+Exemplos:
+
+| decimal | 8 bits | 16 bits |
+|---------|--------|------------------|
+| -1   | 11111111  | 1111111111111111 |
+| -7   | 11111001  | 1111111111111001 |
+| -127 | 10000001  | 1111111110000001 |
+| -130 | estouro   | 1111111101111110 |
+
+## Por que usar representação em complemento de 2?
+
+* Observe que se você complementar um número duas vezes, você obtém o número original (i.e., -(-x) = x)
+* A operação de complementar um número é fácil de ser executada pelo HW
+* Adicionar um número e o complemento de 2 de outro dá o mesmo resultado que subtrair o primeiro do segundo $\Longrightarrow$ não precisa de HW para subtração
+
+### Exercícios
+
+## Observações importantes
+
+* Para o complemento de 2 ter sentido sempre precisamos saber o tamanho da palavra
+* A regra para saber se houve *estouro* precisa ser revista
+* O maior número positivo que podemos representar com n bits é $2^{n-1}-1$
+* O menor número negativo representável com n bits é $-2^{n-1}$
