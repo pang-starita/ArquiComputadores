@@ -21,7 +21,7 @@
 ## Representação de texto
 
 * Textos são compostos por caracteres
-* Os caracteres são compostos por:
+* Os caracteres são:
   - letras maiúsculas e minúsculas de um alfabeto: a, b, c, ... e A, B, C, ...
   - sinais de pontuação: . , ! ? ; :
   - sinais gráficos: + - / \* \& \@ \$ % \( \) \[ \] \{ \} \# \' \< \> \~ \\ SP
@@ -83,7 +83,7 @@ Fonte: Wikipedia
 | 128=$2^7$ | 80 | 200   | 10000000 |
 | 256=$2^8$ | 100 | 400  | 100000000 |
 | 512=$2^9$ | 200 | 1000 | 1000000000 |
-| 1024=$2^{10}$ | 400 | 2000 | 10000000000 |
+| 1K=1024=$2^{10}$ | 400 | 2000 | 10000000000 |
 | 1M=$2^{20}$ | 100000 | 4000000 | 100000000000000000000 |
 
 * Observe a aproximação: $1024 \approx 1K$
@@ -110,6 +110,10 @@ Para eliminar a dúvida de 1KB = 1000B ou 1024B, foi introduzida a noção de *K
 * O número em base 2 é dado pelos restos das divisões
 * O bit mais significativo é o último resto, o bit menos significativo é o resto da primeira divisão
 
+### Conversão de Binário para Decimal
+
+* Dado um número em base 2: $b_n b_{n-1} \ldots b_1 b_0$ para convertê-lo em decimal, basta calcular: $b_n \cdot 2^n + b_{n-1} \cdot 2^{n-1} + \ldots + b_1 \cdot 2^1 + b_0 \cdot 2^0$
+
 ## Exemplo:
 
 | Quociente | Resto |
@@ -127,7 +131,8 @@ Para eliminar a dúvida de 1KB = 1000B ou 1024B, foi introduzida a noção de *K
 | 1 | 1 |
 | 0 |   |
 
-$1969_{10} = 11110110001_2$ \(ano em que o homem pisou na lua\)
+$1969_{10} = 11110110001_2$ \(ano em que o homem pisou na lua\)<br>
+$11110110001_2 = 2^{10} + 2^9 + 2^8 + 2^7 + 2^5 + 2^4 +1 = 1024 + 512 + 256 + 128 + 32 + 16 + 1 = 1969_{10}$
 
 ## Exercícios
 
@@ -175,6 +180,8 @@ $\frac{\begin{array}{lr}&0\\-&1\end{array}}{\begin{array}{lr}\;&-1\end{array}}$
 
 $\frac{\begin{array}{rrrrrrrrr}\;&0&0&0&0&0&0&0&0\\-&0&0&0&0&0&0&0&1\end{array}}{\begin{array}{rrrrrrrrr}1&1&1&1&1&1&1&1&1\end{array}}$ **Estouro negativo?** \(*underflow*\)
 
++ Quando o bit de sinal é 0, o número é positivo, quando é 1, o número é negativo. O zero tem *sinal positivo*.
+
 ## Representação de inteiros negativos com complemento de 2
 
 * Negue (complemento de 1) cada bit da representação positiva com o númro de bits da palavra do processador
@@ -196,6 +203,12 @@ Exemplos:
 * Adicionar um número e o complemento de 2 de outro dá o mesmo resultado que subtrair o primeiro do segundo $\Longrightarrow$ não precisa de HW para subtração
 
 ### Exercícios
+
+1. Calcule usando complemento de 2 com 8 bits:
+  a. 15 - 7
+  b. -15 + 7
+  c. -128 - 1
+  d. -128 - 128
 
 ## Observações importantes
 
