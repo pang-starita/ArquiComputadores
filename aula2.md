@@ -176,7 +176,6 @@ $C_O = C_I' \cdot I_1 \cdot I_2 + C_I \cdot I_1 \cdot I_2' + C_I \cdot I_1' \cdo
 | 1     | 1  | 0  |    |       |
 | 1     | 1  | 1  |    |       |
 
-<!--
 ## Tabela Verdade do FA
 
 | $C_I$ | I1 | I2 | S  | $C_O$ |
@@ -190,8 +189,6 @@ $C_O = C_I' \cdot I_1 \cdot I_2 + C_I \cdot I_1 \cdot I_2' + C_I \cdot I_1' \cdo
 | 1     | 1  | 0  | 0  |  1    |
 | 1     | 1  | 1  | 1  |  1    |
 
--->
-
 ## Circuito do somador completo
 
 ![Somador completo](full_adder.png)
@@ -204,6 +201,8 @@ $C_O = C_I' \cdot I_1 \cdot I_2 + C_I \cdot I_1 \cdot I_2' + C_I \cdot I_1' \cdo
 
 * NOR: $S = (I_1 + I_2)' = I_1' \cdot I_2'$
 * NAND: $S = (I_1 \cdot I_2)' = I_1' + I_2'$
-* XOR: $S = I_1' \cdot I_2 + I_1 \cdot I_2'$
-* Not-XOR: $S = I_1' \cdot I_2' + I_1 \cdot I_2$
+* XOR (OU-EXclusivo): $S = I_1' \cdot I_2 + I_1 \cdot I_2 = I_1 \oplus I_2'$
+* Not-XOR: $S = I_1' \cdot I_2' + I_1 \cdot I_2 = (I_1 \oplus I_2)'$
 * Portas AND, OR, NAND e NOR com mais entradas
+
+![Portas NAND, NOR e XOR](o_gates.png)
