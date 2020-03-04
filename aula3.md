@@ -54,37 +54,37 @@ Fonte: Wikipedia
 
 ## Tabelas de codificações importantes
 
-| Decimal | Hexa | Octal | Binário |
-|---------|------|-------|---------|
-| 0       | 0    | 0     | 0       |
-| 1       | 1    | 1     | 1       |
-| 2       | 2    | 2     | 10      |
-| 3       | 3    | 3     | 11      |
-| 4       | 4    | 4     | 100     |
-| 5       | 5    | 5     | 101     |
-| 6       | 6    | 6     | 110     |
-| 7       | 7    | 7     | 111     |
-| 8       | 8    | 10    | 1000    |
-| 9       | 9    | 11    | 1001    |
-| 10      | A    | 12    | 1010    |
-| 11      | B    | 13    | 1011    |
-| 12      | C    | 14    | 1100    |
-| 13      | D    | 15    | 1101    |
-| 14      | E    | 16    | 1110    |
-| 15      | F    | 17    | 1111    |
+ Decimal     Hexa   Octal   Binário
+--------  -------  ------  --------
+       0        0       0         0    
+       1        1       1         1    
+       2        2       2        10    
+       3        3       3        11    
+       4        4       4       100    
+       5        5       5       101    
+       6        6       6       110    
+       7        7       7       111    
+       8        8      10      1000    
+       9        9      11      1001    
+      10        A      12      1010    
+      11        B      13      1011    
+      12        C      14      1100    
+      13        D      15      1101    
+      14        E      16      1110    
+      15        F      17      1111    
 
 ## Tabelas de codificações importantes(1)
 
-| Decimal | Hexa | Octal | Binário |
-|---------|------|-------|---------|
-| 16=$2^4$ | 10  | 20    | 10000   |
-| 32=$2^5$ | 20  | 40    | 100000  |
-| 64=$2^6$ | 40  | 100   | 1000000 |
-| 128=$2^7$ | 80 | 200   | 10000000 |
-| 256=$2^8$ | 100 | 400  | 100000000 |
-| 512=$2^9$ | 200 | 1000 | 1000000000 |
-| 1K=1024=$2^{10}$ | 400 | 2000 | 10000000000 |
-| 1M=$2^{20}$ | 100000 | 4000000 | 100000000000000000000 |
+          Decimal     Hexa    Octal                Binário
+-----------------  -------  -------  ---------------------
+         16=$2^4$       10       20                  10000
+         32=$2^5$       20       40                 100000
+         64=$2^6$       40      100                1000000
+        128=$2^7$       80      200               10000000
+        256=$2^8$      100      400              100000000
+        512=$2^9$      200     1000             1000000000
+ 1K=1024=$2^{10}$      400     2000            10000000000
+      1M=$2^{20}$   100000  4000000  100000000000000000000
 
 * Observe a aproximação: $1024 \approx 1K$
 
@@ -107,29 +107,34 @@ Para eliminar a dúvida de 1KB = 1000B ou 1024B, foi introduzida a noção de *K
 ## Conversão de números decimais para base 2
 
 * Faça divisões sucessivas por 2 até o quociente ser 0
+  - São divisões inteiras, isto é, divisões sem números quebrados, calcule o quociente e o resto de cada divisão
+  - Divida sucessivamente os quocientes, guarde os restos
 * O número em base 2 é dado pelos restos das divisões
 * O bit mais significativo é o último resto, o bit menos significativo é o resto da primeira divisão
 
 ### Conversão de Binário para Decimal
 
 * Dado um número em base 2: $b_n b_{n-1} \ldots b_1 b_0$ para convertê-lo em decimal, basta calcular: $b_n \cdot 2^n + b_{n-1} \cdot 2^{n-1} + \ldots + b_1 \cdot 2^1 + b_0 \cdot 2^0$
+  - Use o algoritmo de Tataglia para calcular o polinômio:  ${2}^0 \cdot b_0 + 2^1  \cdot b_{1} + 2^2 \cdot b_2 + \ldots + 2^n \cdot b_n = {b}_0 + 2 \cdot (b_1 + 2 \cdot (b_2 + 2 \cdot (\ldots + 2 \cdot (b_{n-1} + 2 \cdot b_n) \ldots )))$
+  <!-- $
+   $  $ -->
 
 ## Exemplo:
 
-| Quociente | Resto |
-|-----------|-------|
-| 1969 | 1 |
-| 984 | 0 |
-| 492 | 0 |
-| 246 | 0 |
-| 123 | 1 |
-| 61 | 1 |
-| 30 | 0 |
-| 15 | 1 |
-| 7 | 1 |
-| 3 | 1 |
-| 1 | 1 |
-| 0 |   |
+  Quociente  Resto
+----------- ------
+       1969      1
+        984      0
+        492      0
+        246      0
+        123      1
+         61      1
+         30      0
+         15      1
+          7      1
+          3      1
+          1      1
+          0        
 
 $1969_{10} = 11110110001_2$ \(ano em que o homem pisou na lua\)<br>
 $11110110001_2 = 2^{10} + 2^9 + 2^8 + 2^7 + 2^5 + 2^4 +1 = 1024 + 512 + 256 + 128 + 32 + 16 + 1 = 1969_{10}$
