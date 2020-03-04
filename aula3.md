@@ -142,13 +142,13 @@ $11110110001_2 = 2^{10} + 2^9 + 2^8 + 2^7 + 2^5 + 2^4 +1 = 1024 + 512 + 256 + 12
 ## Exercícios
 
 1. Converta de decimal para binário:
-  a. 19
-  b. 33
-  c. 42
+  a. 19<!-- = 10011 -->
+  b. 33<!-- = 100001 -->
+  c. 42<!-- = 101010 -->
 2. Converta para decimal os seguintes números:
-  a. 10101010
-  b. 110011001100
-  c. 111000111000111
+  a. 10101010<!-- = 170 -->
+  b. 110011001100<!-- = 12 . 16 .16 + 12 . 16 + 12 = 3276 -->
+  c. 111000111000111<!-- = 29127 -->
 
 ## Adição de números
 
@@ -164,7 +164,7 @@ $\frac{\begin{array}{cccccc} &1&1&1&1&1\\ & & & &1&0\end{array}}{\begin{array}{c
 
 - Os processadores tem um número fixo de bits para realizar as operações aritméticas. Por exemplo, imagine um processador de 8 bits:
   + Os números são sempre representados por 8 bits
-  + Ex.: 42 $\rightarrow$ 00011010 e não simplesmente 11010
+  + Ex.: 42 $\rightarrow$ 00101010 e não simplesmente 101010
 
 - Problema 1: o que acontece quando um número precisa de mais bits para ser representado?
 
@@ -219,5 +219,9 @@ Exemplos:
 
 * Para o complemento de 2 ter sentido sempre precisamos saber o tamanho da palavra
 * A regra para saber se houve *estouro* precisa ser revista
+  - Ao adicionar dois números com sinais opostos, não há *estouro*
+  - Ao adicionar dois números com o mesmo sinal, há estouro se o sinal do resultado é diferente do sinal dos operandos
 * O maior número positivo que podemos representar com n bits é $2^{n-1}-1$
 * O menor número negativo representável com n bits é $-2^{n-1}$
+* Se usamos uma palavra com n bits para representar apenas inteiros não negativos, os números representados estão no intervalo $[0, 2^n-1]$
+* Ao representar números negativos com complemento de 2, os números estão no intervalo $[-2^{n-1}, 2^{n-1}-1]$
