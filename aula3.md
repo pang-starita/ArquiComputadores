@@ -88,7 +88,7 @@ Fonte: Wikipedia
 
 * Observe a aproximação: $1024 \approx 1K$
 
-Para eliminar a dúvida de 1KB = 1000B ou 1024B, foi introduzida a noção de *Kilo binary Bytes* em 1998 pelo IEC. Agora, o correto é escrever: 1KiB, 1MiB, 1GiB, ... Mas, muitos ainda não conhecem este conceito.
+Para eliminar a dúvida de 1KB = 1000B ou = 1024B, foi introduzida a noção de *Kilo binary Bytes* em 1998 pelo IEC. Agora, o correto é escrever: 1KiB, 1MiB, 1GiB, ... Mas, muitos ainda não conhecem este conceito.
 
 ## Tabelas de codificações importantes(2)
 <!--
@@ -116,8 +116,6 @@ Para eliminar a dúvida de 1KB = 1000B ou 1024B, foi introduzida a noção de *K
 
 * Dado um número em base 2: $b_n b_{n-1} \ldots b_1 b_0$ para convertê-lo em decimal, basta calcular: $b_n \cdot 2^n + b_{n-1} \cdot 2^{n-1} + \ldots + b_1 \cdot 2^1 + b_0 \cdot 2^0$
   - Use o algoritmo de Tataglia para calcular o polinômio:  ${2}^0 \cdot b_0 + 2^1  \cdot b_{1} + 2^2 \cdot b_2 + \ldots + 2^n \cdot b_n = {b}_0 + 2 \cdot (b_1 + 2 \cdot (b_2 + 2 \cdot (\ldots + 2 \cdot (b_{n-1} + 2 \cdot b_n) \ldots )))$
-  <!-- $
-   $  $ -->
 
 ## Exemplo:
 
@@ -142,13 +140,13 @@ $11110110001_2 = 2^{10} + 2^9 + 2^8 + 2^7 + 2^5 + 2^4 +1 = 1024 + 512 + 256 + 12
 ## Exercícios
 
 1. Converta de decimal para binário:
-  a. 19<!-- = 10011 -->
-  b. 33<!-- = 100001 -->
-  c. 42<!-- = 101010 -->
+  a. 19 *= 10011*
+  b. 33 *= 100001*
+  c. 42 *= 101010*
 2. Converta para decimal os seguintes números:
-  a. 10101010<!-- = 170 -->
-  b. 110011001100<!-- = 12 . 16 .16 + 12 . 16 + 12 = 3276 -->
-  c. 111000111000111<!-- = 29127 -->
+  a. 10101010 *= 170*
+  b. 110011001100 *= $CCC_{16}$ = 12 . $16^2$ + 12 . 16 + 12 = 3276*
+  c. 111000111000111 *= $70707_8 = 7 . 8^4 + 7 . 8^2 + 7$ = 29127*
 
 ## Adição de números
 
@@ -186,42 +184,3 @@ $\frac{\begin{array}{lr}&0\\-&1\end{array}}{\begin{array}{lr}\;&-1\end{array}}$
 $\frac{\begin{array}{rrrrrrrrr}\;&0&0&0&0&0&0&0&0\\-&0&0&0&0&0&0&0&1\end{array}}{\begin{array}{rrrrrrrrr}1&1&1&1&1&1&1&1&1\end{array}}$ **Estouro negativo?** \(*underflow*\)
 
 + Quando o bit de sinal é 0, o número é positivo, quando é 1, o número é negativo. O zero tem *sinal positivo*.
-
-## Representação de inteiros negativos com complemento de 2
-
-* Negue (complemento de 1) cada bit da representação positiva com o númro de bits da palavra do processador
-* Adicione 1, este é o número negativo em complemento de 2 \(complemento de 1+1\)
-
-Exemplos:
-
-| decimal | 8 bits | 16 bits |
-|---------|--------|------------------|
-| -1   | 11111111  | 1111111111111111 |
-| -7   | 11111001  | 1111111111111001 |
-| -127 | 10000001  | 1111111110000001 |
-| -130 | estouro   | 1111111101111110 |
-
-## Por que usar representação em complemento de 2?
-
-* Observe que se você complementar um número duas vezes, você obtém o número original (i.e., -(-x) = x)
-* A operação de complementar um número é fácil de ser executada pelo HW
-* Adicionar um número e o complemento de 2 de outro dá o mesmo resultado que subtrair o primeiro do segundo $\Longrightarrow$ não precisa de HW para subtração
-
-### Exercícios
-
-1. Calcule usando complemento de 2 com 8 bits:
-  a. 15 - 7
-  b. -15 + 7
-  c. -128 - 1
-  d. -128 - 128
-
-## Observações importantes
-
-* Para o complemento de 2 ter sentido sempre precisamos saber o tamanho da palavra
-* A regra para saber se houve *estouro* precisa ser revista
-  - Ao adicionar dois números com sinais opostos, não há *estouro*
-  - Ao adicionar dois números com o mesmo sinal, há estouro se o sinal do resultado é diferente do sinal dos operandos
-* O maior número positivo que podemos representar com n bits é $2^{n-1}-1$
-* O menor número negativo representável com n bits é $-2^{n-1}$
-* Se usamos uma palavra com n bits para representar apenas inteiros não negativos, os números representados estão no intervalo $[0, 2^n-1]$
-* Ao representar números negativos com complemento de 2, os números estão no intervalo $[-2^{n-1}, 2^{n-1}-1]$

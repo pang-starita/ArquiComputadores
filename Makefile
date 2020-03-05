@@ -1,5 +1,5 @@
 
-all: aula1.pdf aula2.pdf aula3.pdf
+all: aula1.pdf aula2.pdf aula3.pdf aula4.pdf
 
 
 %.pdf: %.md %_h.md
